@@ -6,7 +6,7 @@ const Register = () => {
     <div className='formContainer'>
       <div className='formWrapper'>
         <span className='logo'>Lama Chat</span>
-        <spana className='title'>Register</spana>
+        <span className='title'>Register</span>
         <form>
           <input type='text' placeholder='display name'/>
           <input type='email' placeholder='email'/>
