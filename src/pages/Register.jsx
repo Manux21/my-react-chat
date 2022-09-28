@@ -17,7 +17,9 @@ const Register = () => {
 
     try {
       const res = await createUserWithEmailAndPassword(auth, email, password)
+
       const storageRef = ref(storage, displayName);
+
       const uploadTask = uploadBytesResumable(storageRef, file);
 
 
@@ -26,19 +28,21 @@ const Register = () => {
           setErr(true)
         },
         () => {
-          getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
+          getDownloadURL(uploadTask.snapshot.ref).then( async(downloadURL) => {
 
-            await updateProfile(res.user,{
+            await updateProfile(res.user, {
               displayName,
               photoURL: downloadURL,
+
             })
 
-            await setDoc(doc(db, 'users', res.user.uid), {
+            await setDoc(doc(db, 'users', res.user.uid),{
               uid: res.user.uid,
               displayName,
               email,
               photoURL: downloadURL
             })
+
           });
         }
       );
@@ -46,7 +50,6 @@ const Register = () => {
       setErr(true)
     }
   }
-
 
   return (
     <div className='formContainer'>
