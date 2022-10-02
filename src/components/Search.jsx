@@ -72,7 +72,8 @@ const Search = () => {
         }
 
 
-    //create user chats
+    setUser(null);
+    setUsername(' ')
   }
 
   const handleKey = e => {
@@ -84,7 +85,12 @@ const Search = () => {
   return (
     <div className='search'>
       <div className="searchForm">
-        <input type="text" placeholder='Find a user' onKeyDown={handleKey} onChange={e => setUsername(e.target.value)}/>
+        <input
+          type="text"
+          placeholder='Find a user'
+          onKeyDown={handleKey}
+          onChange={e => setUsername(e.target.value)}
+          value={username}/>
       </div>
       {err && <span>Error. User not found</span>}
       {user && <div onClick={handleSelect} className="userChat">
