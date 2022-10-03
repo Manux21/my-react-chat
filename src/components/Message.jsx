@@ -15,8 +15,11 @@ const Message = ({message}) => {
   }, [message])
 
   console.log(message)
+
+
   return (
-    <div ref={ref} className={`message ${message.senderId === currentUser.uid} && 'owner'`}>
+    <div ref={ref} className={`message ${message.senderId === currentUser.uid && 'owner'}`}
+    >
       <div className="messageInfo">
         <img
           src={
@@ -27,6 +30,7 @@ const Message = ({message}) => {
           alt=""/>
         <span>just now</span>
       </div>
+
       <div className="messageContent">
         <p>{message.text}</p>
         { message.img && <img src={message.img} alt=""/>}
