@@ -1,4 +1,7 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {
+  useContext,
+  useEffect,
+  useState} from 'react';
 import { onSnapshot, doc } from 'firebase/firestore'
 import {db} from "../firebase";
 import {AuthContext} from "../context/AuthContext";

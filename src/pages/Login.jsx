@@ -4,12 +4,6 @@ import {useNavigate, Link} from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import {auth} from "../firebase";
 
-// import {createUserWithEmailAndPassword, updateProfile} from "firebase/auth";
-// import {auth, db, storage} from "../firebase";
-// import {getDownloadURL, ref, uploadBytesResumable} from "firebase/storage";
-// import {doc, setDoc} from "firebase/firestore";
-// import Add from '../img/addAvatar.png'
-
 const Login = () => {
 
   const [err,setErr] = useState(false)

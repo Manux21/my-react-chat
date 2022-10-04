@@ -10,8 +10,6 @@ const Search = () => {
 
   const { currentUser } = useContext(AuthContext);
 
-
-
   const handleSearch = async () => {
   const q = query (
     collection(db, 'users'),
@@ -61,17 +59,10 @@ const Search = () => {
               },
               [combinedId + '.date']: serverTimestamp()
             })
-
-
-
-
-
           }
         } catch (err) {
           console.log(err)
         }
-
-
     setUser(null);
     setUsername(' ')
   }
