@@ -6,7 +6,6 @@ import {db} from "../firebase";
 
 const Messages = () => {
 
-
   const [messages, setMessages] = useState([])
   const { data } = useContext(ChatContext)
 

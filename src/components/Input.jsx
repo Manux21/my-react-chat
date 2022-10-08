@@ -20,7 +20,6 @@ const Input = () => {
 
   const handleSend = async ()=> {
 
-
     if(img) {
 
       const storageRef = ref(storage, uuid());
@@ -46,7 +45,6 @@ const Input = () => {
           });
         }
       );
-
 
     } else {
       await updateDoc(doc(db,'chats',data.chatId),{
